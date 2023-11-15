@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+
+  --dark: #222129;
+  --extra-light: #c9b1e9;
+  --light: #7f60be;
+  --cta: #4e946c;
+  --white: #fffefe;
+
+
+}
+
+body {
+  height: 100vh;
+}
+
+
+
+header {
+    background-color: var(--dark);
+    color: var(--white);
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header-left{
+    margin-left: 20vw;
+    margin-right: 20vw;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.header-btn {
+    color: var(--white);
+    outline: none;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    font-weight: 500;
+
+}
+
+.header-btn:hover {
+    color: var(--extra-light);
+}
+
+
+.main-container {
+    display: flex;
+   height: 88vh;
+
+
+}
+
+.left-main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 70%;
+    margin-left: 10vw;
+    
+}
+
+strong {
+    color: var(--light);
+    font-weight: inherit;
+}
+
+.top-left-main {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+    height: 78vh;
+}
+
+.top-left-main-content {
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.top-left-main-content h1, strong {
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 1.3rem;
+}
+
+.top-left-main-content h3 {
+    margin-right: 3rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 1.3rem;
+}
+
+.bottom-left-main {
+    display: flex;
+    align-items: center;
+    background-color: var(--light);
+    color: var(--white);
+    height: 10vh;
+}
+.bottom-left-main p {
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 300;
+    padding: 2rem;
+}
+
+.cta-btn {
+    background-color: var(--cta);
+    border: none;
+    color: var(--white);
+    border-radius: 23px;
+    padding: 1rem;
+    width: 10rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 1.3rem;
+}
+
+
+
+
+.right-main {
+    background-image: url(./pizza2.png);
+    width: 50%;
+}
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.content .title h1 {
+    color: var(--white);
+    font-size: 6rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: var(--white);
+    -webkit-text-stroke-width: 3px;
+}
