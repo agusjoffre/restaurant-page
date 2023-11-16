@@ -69,14 +69,13 @@ header {
     display: flex;
     flex-direction: column;
     background-color: var(--white);
-    width: 70%;
-    margin-left: 10vw;
-    
+    width: 70%;    
 }
 
 strong {
     color: var(--light);
     font-weight: inherit;
+    
 }
 
 .top-left-main {
@@ -87,6 +86,7 @@ strong {
     padding-top: 10rem;
     padding-bottom: 5rem;
     height: 78vh;
+    margin-left: 10vw;
 }
 
 .top-left-main-content {
@@ -98,15 +98,24 @@ strong {
 
 .top-left-main-content h1, strong {
     font-size: 4rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 1.3rem;
 }
 
+.top-left-main-content strong {
+    font-weight: 600;
+}
+
+
+
 .top-left-main-content h3 {
-    margin-right: 3rem;
-    font-size: 1.4rem;
+    margin-right: 18rem;
+    font-size: 1rem;
     font-weight: 400;
     margin-bottom: 1.3rem;
+    color: rgb(107, 107, 107);
+    line-height: 1.7rem;
+    
 }
 
 .bottom-left-main {
@@ -115,12 +124,15 @@ strong {
     background-color: var(--light);
     color: var(--white);
     height: 10vh;
+
+
 }
 .bottom-left-main p {
     color: var(--white);
     font-size: 1.1rem;
     font-weight: 300;
     padding: 2rem;
+    margin-left: 10vw;
 }
 
 .cta-btn {
@@ -134,6 +146,13 @@ strong {
     cursor: pointer;
     margin-bottom: 1.3rem;
 }
+
+.cta-btn:hover {
+    background-color: #3b7052;
+    color: white;
+    transition: all 0.5s ease;
+}
+
 
 
 
