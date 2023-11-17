@@ -5,9 +5,13 @@ const pricesButton = document.querySelector("#prices-btn");
 const abouUsButton = document.querySelector("#abouUs-btn");
 const pageTitle = document.querySelector(".title");
 
+
 let infoContainer;
 
-const createMainContent = (containerTitle) => {
+
+
+
+const createMainContent = (containerTitle, infoContainer) => {
   pageTitle.innerText = containerTitle;
   infoContainer = document.createElement("div");
   infoContainer.classList.add("info-container");
@@ -55,6 +59,8 @@ const createPriceContent = (title, price) => {
   infoContainer.appendChild(cardHTML);
 };
 
+// MENU CREATION FUNCTIONS
+
 const menu = [];
 
 function card(title, price, description) {
@@ -70,6 +76,8 @@ function addMenuObject(name, price, description) {
   menu.push(newMenu);
 }
 
+
+// DECLARATIONS
 let margarita = addMenuObject(
   "Margarita",
   "$2500",
@@ -94,8 +102,15 @@ let muzzarella = addMenuObject(
   "Mozzarella Pizza, made with tomato sauce, mozzarella, olives, and oregano."
 );
 
+
+
+// LISTENERS 
+
+
+
 function listeners() {
   menuButton.addEventListener("click", () => {
+    removeContent()
     createMainContent("Menu");
     menu.forEach((obj) => {
       createMenuContent(obj.title, obj.price, obj.description);
@@ -103,6 +118,7 @@ function listeners() {
   });
 
   pricesButton.addEventListener("click", () => {
+    removeContent()
     createMainContent("Prices");
     menu.forEach((obj) => {
       createPriceContent(obj.title, obj.price);
@@ -110,6 +126,7 @@ function listeners() {
   });
 
   homeButton.addEventListener("click", () => {
+    removeContent()
     createMainContent("");
   });
 }
