@@ -5,16 +5,12 @@ const pricesButton = document.querySelector("#prices-btn");
 const abouUsButton = document.querySelector("#abouUs-btn");
 const pageTitle = document.querySelector(".title");
 
-
-let infoContainer;
-
-
-
 const createMainContent = (containerTitle) => {
   pageTitle.innerText = containerTitle;
-  infoContainer = document.createElement("div");
+  const infoContainer = document.createElement("div");
   infoContainer.classList.add("info-container");
   contentDiv.appendChild(infoContainer);
+  return infoContainer;
 };
 
 const createMenuContent = (title, price, description) => {
@@ -37,7 +33,7 @@ const createMenuContent = (title, price, description) => {
   cardHTML.appendChild(cardPrice);
   cardHTML.appendChild(cardDescription);
 
-  infoContainer.appendChild(cardHTML);
+  return cardHTML;
 };
 
 const createPriceContent = (title, price) => {
@@ -55,7 +51,7 @@ const createPriceContent = (title, price) => {
   cardHTML.appendChild(cardTitle);
   cardHTML.appendChild(cardPrice);
 
-  infoContainer.appendChild(cardHTML);
+  return cardHTML;
 };
 
 // MENU CREATION FUNCTIONS
@@ -74,7 +70,6 @@ function addMenuObject(name, price, description) {
   const newMenu = new card(name, price, description);
   menu.push(newMenu);
 }
-
 
 // DECLARATIONS
 let margarita = addMenuObject(
@@ -101,32 +96,31 @@ let muzzarella = addMenuObject(
   "Mozzarella Pizza, made with tomato sauce, mozzarella, olives, and oregano."
 );
 
-
-
-// LISTENERS 
-
-
+// LISTENERS
 
 function listeners() {
   menuButton.addEventListener("click", () => {
-    
-    createMainContent("Menu");
+    console.log('aaa')
+    contentDiv.removeChild(contentDiv.lastChild);
+    const mainContent = createMainContent("Menu");
     menu.forEach((obj) => {
-      createMenuContent(obj.title, obj.price, obj.description);
+      const content = createMenuContent(obj.title, obj.price, obj.description);
+      mainContent.appendChild(content);
     });
   });
 
   pricesButton.addEventListener("click", () => {
-    
-    createMainContent("Prices");
+    contentDiv.removeChild(contentDiv.lastChild);
+    const mainContent = createMainContent("Prices");
     menu.forEach((obj) => {
-      createPriceContent(obj.title, obj.price);
+      const content = createPriceContent(obj.title, obj.price);
+      mainContent.appendChild(content);
     });
   });
 
   homeButton.addEventListener("click", () => {
-    
-    createMainContent("");
+    console.log('hola')
+    contentDiv.innerHTML = ''
   });
 }
 
