@@ -60,7 +60,7 @@ header {
   display: flex;
   flex-direction: column;
   background-color: var(--white);
-  width: 70%;
+  flex-grow: 1;
 }
 
 strong {
@@ -138,8 +138,12 @@ strong {
 }
 
 .right-main {
-  background-image: url(./assets/pizza2.png);
+  background-image: url(./assets/14048214_BSOn0jPWDUpBX9GpqIC8s_ju5nmNm2dZvhkOChthe54.jpg);
   width: 50%;
+}
+
+.right-main-info {
+  background-image: url(./assets/pizza2.png);
 }
 
 .content {
@@ -174,28 +178,30 @@ strong {
   color: var(--dark);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-
+  align-items: center;
   padding: 2rem;
   width: 200px;
-  height: auto;
+  height: 300px;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.2, 1.2);
+  transition: all 1s ease;
 }
 
 .card-title {
-  text-align: center;
   font-size: 1.2rem;
   font-weight: 500;
 }
 
 .card-price {
-  text-align: center;
   font-size: 2rem;
   font-weight: 600;
 }
 
 .card-description {
-  text-align: center;
   font-size: 1rem;
   font-weight: 300;
 }
@@ -207,4 +213,10 @@ strong {
   background-color: var(--white);
   color: var(--dark);
   padding: 5%;
+}
+
+.card-title,
+.card-price,
+.card-description {
+  flex-grow: 1;
 }

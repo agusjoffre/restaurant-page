@@ -1,3 +1,4 @@
+const rightMain = document.querySelector(".right-main");
 const contentDiv = document.querySelector(".content");
 const homeButton = document.querySelector("#home-btn");
 const menuButton = document.querySelector("#menu-btn");
@@ -7,6 +8,7 @@ const pageTitle = document.querySelector(".title");
 
 const createMainContent = (containerTitle) => {
   pageTitle.innerText = containerTitle;
+
   const infoContainer = document.createElement("div");
   infoContainer.classList.add("info-container");
   contentDiv.appendChild(infoContainer);
@@ -117,6 +119,7 @@ function listeners() {
     console.log("aaa");
     contentDiv.removeChild(contentDiv.lastChild);
     const mainContent = createMainContent("Menu");
+    rightMain.classList.replace("right-main", "right-main-info");
     menu.forEach((obj) => {
       const content = createMenuContent(obj.title, obj.price, obj.description);
       mainContent.appendChild(content);
@@ -126,6 +129,7 @@ function listeners() {
   pricesButton.addEventListener("click", () => {
     contentDiv.removeChild(contentDiv.lastChild);
     const mainContent = createMainContent("Prices");
+    rightMain.classList.replace("right-main", "right-main-info");
     menu.forEach((obj) => {
       const content = createPriceContent(obj.title, obj.price);
       mainContent.appendChild(content);
@@ -133,8 +137,8 @@ function listeners() {
   });
 
   homeButton.addEventListener("click", () => {
-    console.log("hola");
-    contentDiv.innerHTML = "";
+    rightMain.classList.replace("right-main-info", "right-main");
+    
   });
 
   abouUsButton.addEventListener("click", () => {
