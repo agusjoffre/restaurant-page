@@ -96,11 +96,25 @@ let muzzarella = addMenuObject(
   "Mozzarella Pizza, made with tomato sauce, mozzarella, olives, and oregano."
 );
 
+// AboutUs Content
+function createAboutUsContent() {
+  const aboutUsContainer = document.createElement("div");
+  aboutUsContainer.classList.add("about-us-container");
+
+  const aboutUsText = document.createElement("p");
+  aboutUsText.classList.add("about-us-text");
+  aboutUsText.innerText =
+    "Welcome to San Pedro Pizzeria, where passion for authentic Argentine flavors meets the artistry of crafting mouthwatering pizzas. At San Pedro, we take pride in bringing the heart of Argentina to your table through our delectable pizza creations.";
+  aboutUsContainer.appendChild(aboutUsText);
+
+  return aboutUsContainer;
+}
+
 // LISTENERS
 
 function listeners() {
   menuButton.addEventListener("click", () => {
-    console.log('aaa')
+    console.log("aaa");
     contentDiv.removeChild(contentDiv.lastChild);
     const mainContent = createMainContent("Menu");
     menu.forEach((obj) => {
@@ -119,8 +133,15 @@ function listeners() {
   });
 
   homeButton.addEventListener("click", () => {
-    console.log('hola')
-    contentDiv.innerHTML = ''
+    console.log("hola");
+    contentDiv.innerHTML = "";
+  });
+
+  abouUsButton.addEventListener("click", () => {
+    contentDiv.removeChild(contentDiv.lastChild);
+    const mainContent = createMainContent("About Us");
+    const aboutUsContainer = createAboutUsContent();
+    mainContent.appendChild(aboutUsContainer);
   });
 }
 
