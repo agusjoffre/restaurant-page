@@ -10,8 +10,7 @@ let infoContainer;
 
 
 
-
-const createMainContent = (containerTitle, infoContainer) => {
+const createMainContent = (containerTitle) => {
   pageTitle.innerText = containerTitle;
   infoContainer = document.createElement("div");
   infoContainer.classList.add("info-container");
@@ -110,7 +109,7 @@ let muzzarella = addMenuObject(
 
 function listeners() {
   menuButton.addEventListener("click", () => {
-    removeContent()
+    
     createMainContent("Menu");
     menu.forEach((obj) => {
       createMenuContent(obj.title, obj.price, obj.description);
@@ -118,7 +117,7 @@ function listeners() {
   });
 
   pricesButton.addEventListener("click", () => {
-    removeContent()
+    
     createMainContent("Prices");
     menu.forEach((obj) => {
       createPriceContent(obj.title, obj.price);
@@ -126,7 +125,7 @@ function listeners() {
   });
 
   homeButton.addEventListener("click", () => {
-    removeContent()
+    
     createMainContent("");
   });
 }
