@@ -5,9 +5,11 @@ const pricesButton = document.querySelector("#prices-btn");
 const abouUsButton = document.querySelector("#abouUs-btn");
 const pageTitle = document.querySelector(".title");
 
+let infoContainer;
+
 const createMainContent = (containerTitle) => {
   pageTitle.innerText = containerTitle;
-  let infoContainer = document.createElement("div");
+  infoContainer = document.createElement("div");
   infoContainer.classList.add("info-container");
   contentDiv.appendChild(infoContainer);
 };
@@ -16,23 +18,41 @@ const createMenuContent = (title, price, description) => {
   let cardTitle = document.createElement("p");
   cardTitle.classList.add("card-title");
   cardTitle.innerText = title;
+
   let cardPrice = document.createElement("p");
   cardPrice.classList.add("card-price");
   cardPrice.innerText = price;
+
   let cardDescription = document.createElement("p");
   cardDescription.classList.add("card-description");
   cardDescription.innerText = description;
-  infoContainer.appendChild(cardPrice, cardTitle, cardDescription);
+
+  let cardHTML = document.createElement("div");
+  cardHTML.classList.add("card");
+
+  cardHTML.appendChild(cardTitle);
+  cardHTML.appendChild(cardPrice);
+  cardHTML.appendChild(cardDescription);
+
+  infoContainer.appendChild(cardHTML);
 };
 
 const createPriceContent = (title, price) => {
   let cardTitle = document.createElement("p");
   cardTitle.classList.add("card-title");
   cardTitle.innerText = title;
+
   let cardPrice = document.createElement("p");
   cardPrice.classList.add("card-price");
   cardPrice.innerText = price;
-  infoContainer.appendChild(cardPrice, cardTitle);
+
+  let cardHTML = document.createElement("div");
+  cardHTML.classList.add("card");
+
+  cardHTML.appendChild(cardTitle);
+  cardHTML.appendChild(cardPrice);
+
+  infoContainer.appendChild(cardHTML);
 };
 
 const menu = [];
@@ -65,7 +85,7 @@ let fugazzetta = addMenuObject(
 let jamon = addMenuObject(
   "Ham and bell pepper",
   "$2300",
-  "Another typical argentinian pizza, with lots of cheese"
+  "Another typical Argentinian pizza, with lots of cheese"
 );
 
 let muzzarella = addMenuObject(
@@ -74,20 +94,19 @@ let muzzarella = addMenuObject(
   "Mozzarella Pizza, made with tomato sauce, mozzarella, olives, and oregano."
 );
 
-
 function listeners() {
   menuButton.addEventListener("click", () => {
     createMainContent("Menu");
     menu.forEach((obj) => {
-      createMenuContent(obj.title, obj.price, obj.description)
-    })
+      createMenuContent(obj.title, obj.price, obj.description);
+    });
   });
 
   pricesButton.addEventListener("click", () => {
     createMainContent("Prices");
     menu.forEach((obj) => {
-      createPriceContent(obj.title, obj.price)
-    })
+      createPriceContent(obj.title, obj.price);
+    });
   });
 
   homeButton.addEventListener("click", () => {
